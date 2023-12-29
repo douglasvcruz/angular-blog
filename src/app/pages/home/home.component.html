@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<header>
-  <app-menu-bar></app-menu-bar>
-</header>
-
 <app-menu-title></app-menu-title>
 
 <div class="articles">
@@ -20,20 +16,19 @@
 <div class="articles">
   <div class="articles__main">
     <app-big-card
+      id="1"
       title="Olá, me chamo Douglas"
       description="Sou desenvolvedor web apaixonado por tecnologia e inovação"
     ></app-big-card>
   </div>
 
   <div class="articles__others">
-    <app-small-card
-      title="Hello world"
-    ></app-small-card>
-    <app-small-card
-      title="Bom dia mundo"
-    ></app-small-card>
-    <app-small-card
-      title="Olá, me chamo Douglas"
-    ></app-small-card>
+    <div *ngFor="let item of dataFake">
+      <app-small-card
+        id="{{ item.id }}"
+        title="{{ item.title }}"
+        photoCover="{{ item.photoCover }}"
+      ></app-small-card>
+    </div>
   </div>
 </div>
